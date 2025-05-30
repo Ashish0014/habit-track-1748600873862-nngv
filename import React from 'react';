@@ -1,5 +1,6 @@
-const Layout: React.FC = ({ children }) => {
-  return <div className="container mx-auto">{children}</div>;
+const HabitList: React.FC = () => {
+  // Fetch habits using React Query
+  return <div>{/* Display list of habits */}</div>;
 };
 
-export default Layout;
+export default HabitList;
