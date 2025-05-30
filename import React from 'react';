@@ -1,19 +1,5 @@
-import { Route, Switch } from 'react-router-dom';
-
-const Routes: React.FC = () => {
-  return (
-    <Switch>
-      <Route exact path="/">
-        {/* Home Page Component */}
-      </Route>
-      <Route path="/habits">
-        {/* Habits Page Component */}
-      </Route>
-      <Route path="/goals">
-        {/* Goals Page Component */}
-      </Route>
-    </Switch>
-  );
+const Layout: React.FC = ({ children }) => {
+  return <div className="container mx-auto">{children}</div>;
 };
 
-export default Routes;
+export default Layout;
