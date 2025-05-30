@@ -1,0 +1,7 @@
+id: number;
+  name: string;
+  description: string;
+  goal: number;
+}
+
+export default Habit;
