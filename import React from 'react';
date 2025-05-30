@@ -1,4 +1,24 @@
-import ReactDOM from 'react-dom';
-import App from './App';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { supabase } from './api/supabaseClient';
+import { AuthProvider } from './contexts/AuthContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Routes from './Routes';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const queryClient = new QueryClient();
+
+const App: React.FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <AuthProvider supabaseClient={supabase}>
+          <ThemeProvider>
+            <Routes />
+          </ThemeProvider>
+        </AuthProvider>
+      </Router>
+    </QueryClientProvider>
+  );
+};
+
+export default App;
