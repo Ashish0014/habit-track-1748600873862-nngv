@@ -1,0 +1,13 @@
+import { supabase } from '../api/supabaseClient';
+
+const fetchHabits = async () => {
+  const { data, error } = await supabase.from('habits').select('*');
+  if (error) throw new Error(error.message);
+  return data;
+};
+
+const useHabits = () => {
+  return useQuery('habits', fetchHabits);
+};
+
+export default useHabits;
